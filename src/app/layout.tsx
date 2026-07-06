@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Where Faith Meets Academic Excellence | Salve Regina School of Palawan Inc.",
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/salve_regina_logo.png",
   },
   description:
     "Nurturing young minds with Christian values, excellence, and holistic education in Puerto Princesa City, Palawan since 1993.",
