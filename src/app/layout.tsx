@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Where Faith Meets Academic Excellence | Salve Regina School of Palawan Inc.",
+  title: "Salve Regina School, Inc.",
   icons: {
     icon: "/images/salve_regina_logo.png",
   },
