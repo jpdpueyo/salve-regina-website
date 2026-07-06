@@ -2,137 +2,185 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, GraduationCap, Users, Award, Heart } from "lucide-react";
+import { ArrowRight, GraduationCap, Users, Award, Heart, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl floating" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl floating-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-secondary/5 to-transparent rounded-full" />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Luxurious animated background */}
+      <div className="absolute inset-0">
+        {/* Main gradient bg */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-100/60 via-pink-50/40 to-blue-100/50" />
+
+        {/* Animated orbs */}
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 left-[10%] w-96 h-96 bg-gradient-to-br from-pink-200/60 to-pink-300/30 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-20 right-[5%] w-[500px] h-[500px] bg-gradient-to-br from-blue-200/50 to-sky-200/30 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.3, 0.15] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-radial from-pink-100/40 via-blue-50/20 to-transparent rounded-full"
+        />
+
+        {/* Floating decorative elements */}
+        <motion.div
+          animate={{ y: [-20, 20, -20], rotate: [0, 5, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-32 right-[20%] w-3 h-3 bg-pink-300 rounded-full opacity-40"
+        />
+        <motion.div
+          animate={{ y: [15, -15, 15], rotate: [0, -3, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[60%] left-[15%] w-2 h-2 bg-blue-300 rounded-full opacity-50"
+        />
+        <motion.div
+          animate={{ y: [-10, 10, -10] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[30%] right-[30%] w-4 h-4 bg-pink-200 rounded-full opacity-30"
+        />
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.015]" style={{
+          backgroundImage: `radial-gradient(circle, #1e3a8a 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-secondary/10 text-secondary-light border border-secondary/20 rounded-full px-4 py-2 text-sm font-medium mb-6"
+              transition={{ delay: 0.3 }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-50 to-blue-50 border border-pink-100/50 rounded-full px-5 py-2.5 text-sm font-medium mb-8 shadow-sm"
             >
-              <GraduationCap size={16} />
-              <span>Nurturing Excellence Since 1993</span>
+              <Sparkles size={16} className="text-pink-500" />
+              <span className="bg-gradient-to-r from-pink-600 to-blue-600 bg-clip-text text-transparent">
+                Nurturing Excellence Since 1993
+              </span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-dark leading-tight mb-6">
-              Where Faith Meets{" "}
-              <span className="gradient-text">Academic Excellence</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-dark leading-[1.1] mb-8">
+              Where Faith{" "}
+              <br />
+              <span className="gradient-text text-shadow-luxury">Meets Excellence</span>
             </h1>
 
-            <p className="text-lg text-dark/60 leading-relaxed mb-8 max-w-lg">
+            <p className="text-lg text-dark/50 leading-relaxed mb-10 max-w-lg font-light">
               Salve Regina School of Palawan nurtures dynamic, productive lifelong learners
               imbued with Christian values and relevant skills for the 21st century.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary inline-flex items-center gap-2">
-                Start Your Journey
+            <div className="flex flex-wrap gap-5">
+              <Link href="/contact" className="btn-primary inline-flex items-center gap-2.5 text-base">
+                Begin Your Journey
                 <ArrowRight size={18} />
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3.5 border-2 border-primary/20 text-primary rounded-full font-semibold hover:bg-primary/5 transition-all"
+                className="inline-flex items-center gap-2.5 px-7 py-4 border-2 border-pink-200/60 text-dark/70 rounded-full font-semibold hover:bg-pink-50/50 hover:border-pink-300/60 transition-all duration-300"
               >
-                Learn More
+                Discover More
               </Link>
             </div>
 
-            {/* Stats */}
+            {/* Stats with luxury styling */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-primary/10"
+              transition={{ delay: 0.8 }}
+              className="grid grid-cols-3 gap-8 mt-16 pt-10 border-t border-gradient-to-r from-transparent via-pink-100 to-transparent"
             >
-              <div>
-                <h3 className="text-3xl font-heading font-bold text-primary">30+</h3>
-                <p className="text-sm text-dark/50 mt-1">Years of Excellence</p>
-              </div>
-              <div>
-                <h3 className="text-3xl font-heading font-bold text-primary">500+</h3>
-                <p className="text-sm text-dark/50 mt-1">Students Enrolled</p>
-              </div>
-              <div>
-                <h3 className="text-3xl font-heading font-bold text-primary">24+</h3>
-                <p className="text-sm text-dark/50 mt-1">Dedicated Teachers</p>
-              </div>
+              {[
+                { number: "30+", label: "Years of Excellence" },
+                { number: "500+", label: "Students Enrolled" },
+                { number: "24+", label: "Expert Teachers" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 + i * 0.15 }}
+                >
+                  <h3 className="text-4xl font-heading font-bold gradient-text">{stat.number}</h3>
+                  <p className="text-xs text-dark/40 mt-2 tracking-wide uppercase">{stat.label}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
 
-          {/* Right - Feature Cards */}
+          {/* Right - Premium Feature Cards */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="relative"
           >
-            <div className="grid grid-cols-2 gap-4">
+            {/* Decorative ring */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-pink-100/30 via-transparent to-blue-100/30 rounded-[2rem] blur-xl" />
+
+            <div className="grid grid-cols-2 gap-5 relative">
               <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="glass-card p-6 col-span-2"
+                whileHover={{ scale: 1.03, y: -8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="luxury-card p-7 col-span-2"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
-                  <GraduationCap className="text-primary" size={24} />
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-blue-500/20">
+                  <GraduationCap className="text-white" size={26} />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">K-12 Education</h3>
-                <p className="text-sm text-dark/60">
+                <h3 className="font-heading font-semibold text-xl mb-2">K-12 Education</h3>
+                <p className="text-sm text-dark/50 leading-relaxed">
                   Complete SPED, Kindergarten, and Grades 1-10 programs aligned with national standards.
                 </p>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="glass-card p-6"
+                whileHover={{ scale: 1.05, y: -8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="luxury-card p-6"
               >
-                <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center mb-4">
-                  <Heart className="text-secondary" size={24} />
+                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-pink-500/20">
+                  <Heart className="text-white" size={22} />
                 </div>
                 <h3 className="font-heading font-semibold text-base mb-2">Christian Values</h3>
-                <p className="text-xs text-dark/60">Faith-based nurturing environment</p>
+                <p className="text-xs text-dark/45 leading-relaxed">Faith-based nurturing environment</p>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="glass-card p-6"
+                whileHover={{ scale: 1.05, y: -8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="luxury-card p-6"
               >
-                <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-4">
-                  <Users className="text-green-600" size={24} />
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-emerald-500/20">
+                  <Users className="text-white" size={22} />
                 </div>
                 <h3 className="font-heading font-semibold text-base mb-2">Expert Faculty</h3>
-                <p className="text-xs text-dark/60">Passionate educators guiding growth</p>
+                <p className="text-xs text-dark/45 leading-relaxed">Passionate educators guiding growth</p>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="glass-card p-6 col-span-2"
+                whileHover={{ scale: 1.03, y: -8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="luxury-card p-7 col-span-2"
               >
-                <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mb-4">
-                  <Award className="text-purple-600" size={24} />
+                <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-violet-500/20">
+                  <Award className="text-white" size={26} />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">Holistic Development</h3>
-                <p className="text-sm text-dark/60">
+                <h3 className="font-heading font-semibold text-xl mb-2">Holistic Development</h3>
+                <p className="text-sm text-dark/50 leading-relaxed">
                   Nurturing mind, body, and spirit with 21st-century competencies and resilience.
                 </p>
               </motion.div>
