@@ -74,9 +74,9 @@ export function HeroSection() {
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-dark leading-[1.1] mb-8">
-              Where Faith{" "}
+              Salve Regina{" "}
               <br />
-              <span className="gradient-text text-shadow-luxury">Meets Excellence</span>
+              <span className="gradient-text text-shadow-luxury">School, Inc.</span>
             </h1>
 
             <p className="text-lg text-dark/50 leading-relaxed mb-10 max-w-lg font-light">
