@@ -15,7 +15,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Salve Regina School of Palawan Inc.",
+  title: "Salve Regina School, Inc.",
+  icons: {
+    icon: "/images/salve_regina_logo.png",
+  },
   description:
     "Nurturing young minds with Christian values, excellence, and holistic education in Puerto Princesa City, Palawan since 1993.",
   keywords: ["school", "Palawan", "education", "Puerto Princesa", "Christian", "K-12"],
